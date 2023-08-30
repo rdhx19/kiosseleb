@@ -1,0 +1,24 @@
+<?php
+$key = "..."; // API Key Anda
+$service = "..."; // ID Layanan
+$link = "rkios.com"; // Target Pesanan
+$quantity = "1000"; // Jumlah Pesanan
+$postdata = "key=$key&action=add&service=$service&target=$link&quantity=$quantity";
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "http://rkios.com/api/api.php
+");
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$chresult = curl_exec($ch);
+curl_close($ch);
+$json_result = json_decode($chresult, true);
+
+if ($json_result['status'] == false ) {
+	echo "ORDER GAGAL, PESAN : ".$json_result['data']['msg'];
+} else {
+	echo "ORDER SUKSES, ORDER ID : ".$json_result['data']['id'];
+}
+?>
