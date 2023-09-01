@@ -5,7 +5,7 @@ if ($sql == TRUE){
     $p_link = "https://medanpedia.co.id/api/services";
     $api_postdata = array(
         'api_id' => 5291,
-        'api_key' => '51f27d-c9cd4e-2ec33f-1c86ca-88b774'
+        'api_key' => '44a147-747ccb-88d5e6-bec116-635c5f'
     );
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $p_link);
@@ -22,19 +22,27 @@ if ($sql == TRUE){
         if (mysqli_num_rows($check_category) > 0) {
             echo 'category sudah ada <br/>';
         } else {
-            $data_category = strtr($data['code'], array(
+            $data_category = strtr($category, array(
                 ' ORDER WEBISITE/JASA FIX/DAN OPER IRVANKEDE' => 'test',
-                ' Medanpedia' => 'RKIOS',
+                ' Medanpedia' => 'Kiosseleb',
                 ' MP' => ' R',
-                ' Medan' => ' Rkios',
+                ' Medan' => ' Kiosseleb',
                 ' anggap free' => ' murah',
                 ' IRVANKEDE' => ' Kiosseleb',
                 ' GRATIS' => ' Termurah',
             ));
+
+            $id = $data['id'];  // Assuming 'id' is the key in your data array
+            $service_name = $data['service'];  // Assuming 'service' is the key in your data array
+            $note = $data['note'];  // Assuming 'note' is the key in your data array
+            $min = $data['min'];  // Assuming 'min' is the key in your data array
+            $max = $data['max'];  // Assuming 'max' is the key in your data array
+            $price = $data['price'];  // Assuming 'price' is the key in your data array
+
             $input_post = array(
                 'id' => $id,
                 'sid' => $id,
-                'category' => $data_category['id'],
+                'category' => $id,
                 'service' => $service_name,
                 'note' => $note,
                 'min' => $min,
@@ -47,12 +55,12 @@ if ($sql == TRUE){
             $insert = mysqli_query($tur, "INSERT INTO `service_cat`(`name`, `code`) VALUES ('$category', '$category')");
             if ($insert == TRUE){
                 echo "$category sudah ditambahkan <br/>";
-
             } else {
-                echo "$category gagal ditambahkan karena".mysqli_error($tur)." <br/>";
+                echo "$category gagal ditambahkan karena " . mysqli_error($tur) . " <br/>";
             }
         }
     }
 } else {
     die('Error');
 }
+?>

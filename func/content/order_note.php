@@ -10,9 +10,9 @@ if (isset($_POST['service'])) {
 										<table class="table table-bordered">
 											<tbody>
 											<tr>
-												<td align="center"><b>Minimal</b></td>
-												<td align="center"><b>maksimal</b></td>
-												<td align="center"><b>harga per 1000</b></td>
+												<td align="center"><b>Minimal Pesan</b></td>
+												<td align="center"><b>Maksimal Pesan</b></td>
+												<td align="center"><b>Harga Per 1000 Pesanan</b></td>
 											</tr>
 											<tr>
 												<td align="center"><?php echo number_format($data_service['min'],0,',','.'); ?></td>

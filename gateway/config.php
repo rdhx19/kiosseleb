@@ -4,7 +4,7 @@ ini_set('display_errors','0');
  * This password must match the password in the EnvayaSMS app settings,
  * otherwise example/www/gateway.php will return an "Invalid request signature" error.
  */
-$PASSWORD = 'rkiosku';
+$PASSWORD = 'Kiosselebku';
 /*
  * example/send_sms.php uses the local file system to queue outgoing messages
  * in this directory.

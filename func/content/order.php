@@ -51,7 +51,7 @@ if (isset($_POST['order'])) {
 			if ($provider == "MANUAL") {
 				$api_postdata = "";
 			} else if ($provider == "MEDANPEDIA") {
-                $postdata = "api_id=5291&api_key=$api_key&service=$pid&target=$post_link&quantity=$post_quantity";
+                $postdata = "api_id=5291&api_key=44a147-747ccb-88d5e6-bec116-635c5f&service=$pid&target=$post_link&quantity=$post_quantity";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, 'https://medanpedia.co.id/api/order');
                 curl_setopt($ch, CURLOPT_POST, 1);
@@ -192,7 +192,7 @@ Jika terjadi kesalahan / mendapatkan pesan gagal yang kurang jelas, silahkan hub
  <li>Jangan memasukkan orderan yang sama di panel lain jika orderan di MedanPedia belum selesai. </li><br />
  <li>Jangan mengganti username atau menghapus link target saat sudah order. </li><br />
  <li>Orderan yang sudah masuk tidak dapat di cancel / refund manual, seluruh proses orderan dikerjakan secara otomatis oleh server. </li><br />
- <li>Jika Anda memasukkan orderan di RKios berarti Anda sudah mengerti aturan Rkios dan <b><a href="?<?php echo paramEncrypt('content=ketentuan')?>">jangan lupa baca menu F.A.Q serta Terms</a></li></b>
+ <li>Jika Anda memasukkan orderan di Kiosseleb berarti Anda sudah mengerti aturan Kiosseleb dan jangan lupa baca menu F.A.Q serta Terms.</li></b>
 
 										</div></div>
                         </div>

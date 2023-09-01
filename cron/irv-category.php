@@ -24,9 +24,9 @@ if ($sql == TRUE){
         } else {
             $data_category = strtr($data['code'], array(
                 ' ORDER WEBISITE/JASA FIX/DAN OPER IRVANKEDE' => 'test',
-                ' Medanpedia' => 'RKIOS',
+                ' Medanpedia' => 'Kiosseleb',
                 ' MP' => ' R',
-                ' Medan' => ' Rkios',
+                ' Medan' => ' Kiosseleb',
                 ' anggap free' => ' murah',
                 ' IRVANKEDE' => ' Kiosseleb',
                 ' GRATIS' => ' Termurah',

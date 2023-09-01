@@ -4,7 +4,9 @@ function db_insert($tur, $table, $data) {
     if (!is_array($data)) {
         return false;
     } else {
-        $query = mysqli_query($tur, "INSERT INTO $table (".implode(', ', array_keys($data)).") VALUES ('".implode('\', \'', $data)."')");
+        $keys = implode(', ', array_keys($data));
+        $values = implode('\', \'', $data);
+        $query = mysqli_query($tur, "INSERT INTO $table ($keys) VALUES ('$values')");
         if (mysqli_error($tur)) {
             return false;
         } else {
@@ -12,12 +14,14 @@ function db_insert($tur, $table, $data) {
         }
     }
 }
-$sql = mysqli_query($tur, "DELETE FROM `services`");
+
+// Ubah DELETE query menjadi TRUNCATE untuk membersihkan tabel
+$sql = mysqli_query($tur, "TRUNCATE TABLE `services`");
 if ($sql == TRUE){
     $p_link = "https://api.medanpedia.co.id/services";
     $api_postdata = array(
         'api_id' => 5291,
-        'api_key' => '51f27d-c9cd4e-2ec33f-1c86ca-88b774'
+        'api_key' => '44a147-747ccb-88d5e6-bec116-635c5f'
     );
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $p_link);
@@ -36,19 +40,19 @@ if ($sql == TRUE){
         $max = $data['max'];
         $note = $data['description'];
         $price = $harga*1.5;
-        $check_services = mysqli_query($tur, "SELECT * FROM services1 WHERE pid = '$id'");
+        $check_services = mysqli_query($tur, "SELECT * FROM services WHERE pid = '$id'");
         $check_category = mysqli_query($tur, "SELECT * FROM service_cat WHERE name = '$category' OR code ='$category'");
         $data_category = mysqli_fetch_assoc($check_category);
         if (mysqli_num_rows($check_services) > 0) {
             echo 'layanan sudah ada <br/>';
         } else {
             $service_name = strtr($data['name'], array(
-                ' DB MEDANPEDIA' => 'DB RKIOS',
-                ' Medanpedia' => 'RKIOS',
+                ' DB MEDANPEDIA' => 'DB Kiosseleb',
+                ' Medanpedia' => 'Kiosseleb',
                 ' MP' => ' R',
-                ' Medan' => ' Rkios',
+                ' Medan' => ' Kiosseleb',
                 ' anggap free' => ' murah',
-                ' MEDANPEDIA' => ' Rkios',
+                ' MEDANPEDIA' => ' Kiosseleb',
                 ' GRATIS' => ' Termurah',
             ));
             $input_post = array(
@@ -75,3 +79,4 @@ if ($sql == TRUE){
 } else {
     die('Error');
 }
+?>

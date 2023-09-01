@@ -46,7 +46,7 @@ if ($sql == TRUE){
                 ' ORDER WEBSITE SMM FULL DOMAIN HOSTING' => 'test',
                 ' JASA FIX WEBSITE EROR ' => 'test',
                 ' JASA OPER WEBSITE KALIAN KE Kiosseleb TermurahSSSS ' => ' test',
-                ' Medan' => ' Rkios',
+                ' Medan' => ' Kiosseleb',
                 ' anggap free' => ' murah',
                 ' IRVANKEDE' => ' Kiosseleb',
                 ' GRATIS' => ' Termurah',

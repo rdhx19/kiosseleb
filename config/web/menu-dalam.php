@@ -64,7 +64,7 @@
                                 <ul class="submenu">
                                     <li><a href="?<?php echo paramEncrypt('content=apidok')?>">Api Dokumentasi</a></li>
                                     <li><a href="Kiosseleb.apk">Download Aplikasi Kiosseleb</a></li>
-                                    <li><a href="https://blog.rkios.site/">Bantuan</a></li>
+                                    <li><a href="https://blog.Kiosseleb.site/">Bantuan</a></li>
                                   
                                     <li><a href="https://chat.whatsapp.com/KQLzGdmP4TEEajJ1LUGZ9f">Grup WhatsApp</a></li>
                                     

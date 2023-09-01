@@ -9,7 +9,7 @@ if (isset($_POST['category'])) {
 	<?php
 	while ($data_service = mysqli_fetch_assoc($check_service)) {
 	?>
-	<option value="<?php echo $data_service['sid'];?>"><?php echo $data_service['service'];?> Rp.<?php echo number_format($data_service['price'],0,',','.'); ?>/1k </option>
+	<option value="<?php echo $data_service['sid'];?>"><?php echo $data_service['service'];?>  &nbsp;  | &nbsp; Rp.<?php echo number_format($data_service['price'],0,',','.'); ?>/1k </option>
 	<?php
 	}
 } else {

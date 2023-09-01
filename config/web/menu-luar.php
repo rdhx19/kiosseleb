@@ -27,7 +27,7 @@
                                 <ul class="submenu">
                                     <li><a href="?<?php echo md5("page"); ?>=<?php echo base64_encode("kontak"); ?>">Hubungi Kami</a></li>
                                     <li><a href="?<?php echo md5("page"); ?>=<?php echo base64_encode("ketentuan"); ?>">Ketentuan Layanan</a></li>
-                                    <li><a href="https://blog.rkios.site/">bantuan</a></li>
+                                    <li><a href="https://blog.Kiosseleb.site/">bantuan</a></li>
                                 </ul>
                             </li>
                             
